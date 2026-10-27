@@ -1,58 +1,60 @@
 # SYNAPSE Universal B2B Sales Intelligence Engine — Integration Guide
 
-This guide explains how to use SYNAPSE with ChatGPT, Google Gemini, and Claude. It uses the existing files in this repository; the sales knowledge does not need to be rewritten.
+This guide explains how to use SYNAPSE with ChatGPT, Google Gemini, and Claude. It uses the existing files in this repository, so the core sales knowledge does not need to be rewritten.
 
 **Repository:** [SYNAPSE Universal B2B Sales Intelligence Engine](https://github.com/ysiswoadiguna-source/SYNAPSE-Universal-B2B-Sales-Intelligence-Engine)
 
 ## Repository Files
 
-- \`SKILL.md\` — instructions that describe how the AI should apply SYNAPSE.
-- \`REFERENCE.md\` — the main SYNAPSE sales knowledge base and operating rules.
+- [`SKILL.md`](SKILL.md) — instructions for how the AI should apply SYNAPSE.
+- [`REFERENCE.md`](REFERENCE.md) — the main SYNAPSE sales knowledge base and operating rules.
 
-Keep these files together when packaging SYNAPSE as a Skill. For ChatGPT Projects, upload both files as project sources.
+Keep these files together when packaging SYNAPSE as a Skill. For ChatGPT Projects, upload both as project sources.
 
 ---
 
 ## 1. ChatGPT Projects
 
-ChatGPT Projects let you keep related conversations, reference files, and project instructions together.
+ChatGPT Projects keep related conversations, reference files, and instructions together.
 
 1. Open [ChatGPT](https://chatgpt.com/).
-2. Create a new Project and name it \`SYNAPSE Sales Intelligence\`.
-3. Download \`SKILL.md\` and \`REFERENCE.md\` from this repository and upload both files to the Project.
-4. Open the Project settings and add the following project instructions:
+2. Create a new Project and name it `SYNAPSE Sales Intelligence`.
+3. Download `SKILL.md` and `REFERENCE.md` from this repository and upload both files to the Project.
+4. Open the Project's settings and add the following project instructions:
 
-   \`\`\`text
+   ```text
    Use SKILL.md as the operating instructions and REFERENCE.md as the primary SYNAPSE knowledge base. Follow the evidence-classification rules, opportunity qualification framework, probability and confidence guidance, communication standards, and Next Best Action logic. Do not invent missing customer, product, price, timing, or competitor information.
-   \`\`\`
+   ```
 
-5. Start a Project chat and paste the customer conversation, CRM record, or email you want to analyze.
+5. Start a chat inside the Project and paste the customer conversation, CRM record, or email you want to analyze.
 
 **Official guide:** [Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt)
+
+> Project and upload availability may vary according to your plan and workspace settings.
 
 ---
 
 ## 2. Google Gemini Skills
 
-Gemini can create a Skill from a \`SKILL.md\` file, a folder, or a ZIP containing the Skill file.
+Gemini supports creating a Skill by uploading a `SKILL.md` file, a folder, or a ZIP containing `SKILL.md`. SYNAPSE's reference file should be included in the same Skill package.
 
-1. Download \`SKILL.md\` and \`REFERENCE.md\` from this repository.
-2. Create a folder named \`synapse-sales-intelligence\` and place both files inside it:
+1. Download `SKILL.md` and `REFERENCE.md` from this repository.
+2. Create a folder named `synapse-sales-intelligence` and place both files inside it:
 
-   \`\`\`text
+   ```text
    synapse-sales-intelligence/
    ├── SKILL.md
    └── REFERENCE.md
-   \`\`\`
+   ```
 
-3. Compress the \`synapse-sales-intelligence\` folder into a ZIP file. Make sure \`SKILL.md\` is inside the folder at the top level.
-4. Open [Google Gemini](https://gemini.google.com/) and go to the Skills page.
-5. Choose **Upload**, select the ZIP file, review the Skill, and select **Create**.
-6. Test the Skill with a customer conversation and verify that it uses the SYNAPSE framework.
+3. Compress the `synapse-sales-intelligence` folder into a ZIP file. Ensure `SKILL.md` is inside the folder at the top level.
+4. Open [Google Gemini](https://gemini.google.com/) and navigate to the Skills page.
+5. Select **Upload**, choose the ZIP file, review the Skill, then select **Create**.
+6. Test the Skill with a customer conversation and confirm that the response follows the SYNAPSE framework.
 
 **Official guide:** [Create and manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296?hl=en)
 
-> Menu labels and feature availability may vary by account, region, or interface updates. Follow the instructions shown in your Gemini account.
+> Menu labels and feature availability can vary by account, region, or interface updates. Follow the instructions shown in your Gemini account.
 
 ---
 
@@ -60,26 +62,26 @@ Gemini can create a Skill from a \`SKILL.md\` file, a folder, or a ZIP containin
 
 Claude supports custom Skills uploaded as ZIP files containing a Skill folder.
 
-1. Download \`SKILL.md\` and \`REFERENCE.md\` from this repository.
-2. Put both files inside a folder named \`synapse-sales-intelligence\`:
+1. Download `SKILL.md` and `REFERENCE.md` from this repository.
+2. Put both files inside a folder named `synapse-sales-intelligence`:
 
-   \`\`\`text
+   ```text
    synapse-sales-intelligence/
    ├── SKILL.md
    └── REFERENCE.md
-   \`\`\`
+   ```
 
-3. Compress the folder itself into a ZIP. The ZIP should contain \`synapse-sales-intelligence/\` as its top-level folder, not just loose files at the ZIP root.
+3. Compress the folder itself into a ZIP. The ZIP should contain `synapse-sales-intelligence/` as its top-level folder, rather than placing the files loose at the ZIP root.
 4. Open [Claude](https://claude.ai/).
 5. Go to **Customize → Skills → + Create skill → Upload a skill**.
-6. Upload the ZIP, finish the import, and enable the Skill.
-7. Test it with several customer conversations to confirm that the Skill is applied as expected.
+6. Upload the ZIP, complete the import, and enable the Skill.
+7. Test it with several customer conversations to confirm it is being applied as expected.
 
 **Official guides:**
 - [Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 - [How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
 
-> Follow any additional requirements displayed in your Claude account. Feature availability may depend on your plan or workspace settings.
+> Follow the requirements shown in your Claude account. Feature availability may depend on plan or workspace settings.
 
 ---
 
@@ -87,7 +89,7 @@ Claude supports custom Skills uploaded as ZIP files containing a Skill folder.
 
 After setup, use this prompt to test the integration:
 
-\`\`\`text
+```text
 Analyze the following customer conversation using the SYNAPSE Universal B2B Sales Intelligence Engine.
 
 1. Determine the current opportunity position and buying stage.
@@ -99,15 +101,15 @@ Analyze the following customer conversation using the SYNAPSE Universal B2B Sale
 Separate facts from claims and inferences. Do not invent missing information.
 
 [Paste customer conversation here]
-\`\`\`
+```
 
 ## 5. Usage Principles
 
-- Treat \`REFERENCE.md\` as the primary source for SYNAPSE's sales analysis framework.
+- Treat `REFERENCE.md` as the primary source for SYNAPSE's sales analysis framework.
 - Distinguish facts, customer claims, inferences, hypotheses, and unknowns.
 - Never invent prices, product specifications, commitments, deadlines, or competitor details.
-- Compare outputs from each platform. Different AI platforms may interpret or express the same framework differently.
-- Avoid uploading confidential customer or company information unless you are authorized to do so and the platform's data settings are appropriate.
+- Compare outputs across platforms, since different AI platforms may interpret or express the same framework differently.
+- Do not upload confidential customer or company information unless you are authorized to do so and the platform's data settings are appropriate.
 
 ---
 
